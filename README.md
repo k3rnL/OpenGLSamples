@@ -1,3 +1,5 @@
+![CI](https://github.com/k3rnL/OpenGLSamples/workflows/CI/badge.svg)
+
 # OpenGLSamples
 
 You can find here some of my experiments with OpenGL.
