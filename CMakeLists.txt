@@ -22,4 +22,4 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake-modules" ${CMAKE_MODULE_PATH})
 
 add_subdirectory("00.Common")
 add_subdirectory("01.Geometry Shader")
-#add_subdirectory("02.Menger Sponge")
+add_subdirectory("02.Trefoil Knot")

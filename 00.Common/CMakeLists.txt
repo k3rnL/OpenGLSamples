@@ -13,5 +13,5 @@ include_directories(include ${GLFW3_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${OPENGL_
 
 add_library(common STATIC ${source})
 target_include_directories(common PUBLIC "include" ${GLM_INCLUDE_DIRS})
-target_link_libraries(common ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES} ${GLFW3_LIBRARIES})
+target_link_libraries(common ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES} ${GLFW3_STATIC_LIBRARIES})
 
