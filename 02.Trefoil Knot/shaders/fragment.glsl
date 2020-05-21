@@ -11,12 +11,11 @@ void main()
   if (distance(fract(f_point.x), 0) < 0.1)
     fragColor = vec3(0, 0, 1);
 
-  vec3 light = vec3(-10, 10, -10);
+  vec3 light = vec3(-10, 10, 10);
 
   vec3 L = normalize(light - f_point.xyz);
   float angle = max(0, dot(L, normalize(f_normal)));
 
-//  fragColor = vec3(1);
   fragColor = vec3(0.2) + fragColor * angle;
 
 }
