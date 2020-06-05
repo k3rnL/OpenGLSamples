@@ -80,3 +80,7 @@ void g_keyboard_callback(GLFWwindow *window, int key, int scancode, int action, 
     g_windowInstances[window]->_keyboardCallback(key, scancode, action, mods);
 }
 
+GLFWwindow *Window::getWindow() const {
+    return _window;
+}
+

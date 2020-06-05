@@ -16,7 +16,7 @@ public:
 
     void move(const glm::vec3 &v) override;
 
-private:
+protected:
     glm::vec3 _up;
     glm::vec3 _eye;
     glm::vec3 _center;

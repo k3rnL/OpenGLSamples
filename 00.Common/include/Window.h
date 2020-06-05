@@ -36,6 +36,8 @@ public:
     void setKeyboardCallback(
             const std::function<void(int key, int scancode, int action, int mods)> &callback);
 
+    GLFWwindow *getWindow() const;
+
 private:
     GLFWwindow *_window;
 

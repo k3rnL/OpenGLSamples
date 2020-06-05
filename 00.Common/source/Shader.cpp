@@ -15,9 +15,16 @@ Shader::Shader(const std::string &file, Shader::Type type) {
     compile(source);
 }
 
+Shader::~Shader() {
+    glDeleteShader(_shaderId);
+}
+
 std::string Shader::loadFile(const std::string &file) {
     std::ifstream ifs(file);
     std::stringstream buffer;
+
+    if (!ifs.is_open())
+        throw ShaderException("File not found \""+file+"\"");
 
     buffer << ifs.rdbuf();
     return buffer.str();
@@ -34,8 +41,9 @@ bool Shader::compile(const std::string &source) {
         char buffer[1024];
         glGetShaderInfoLog(_shaderId, 1024, NULL, buffer);
         if (buffer[0]) {
-            std::cerr << "Cannot compile shader source: " << buffer << std::endl;
-            exit(1);
+            std::stringstream ss;
+            ss << "Cannot compile shader source: " << buffer << std::endl;
+            throw ShaderException(ss.str());
         }
     };
     return true;
@@ -44,3 +52,4 @@ bool Shader::compile(const std::string &source) {
 GLuint Shader::getShaderID() const {
     return _shaderId;
 }
+

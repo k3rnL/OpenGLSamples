@@ -8,6 +8,12 @@
 
 #include <string>
 #include <GL/glew.h>
+#include <stdexcept>
+
+class ShaderException : public std::exception {
+public:
+    explicit ShaderException(const std::string &msg) : exception(msg.c_str()) {} ;
+};
 
 class Shader {
 public:
@@ -18,9 +24,9 @@ public:
     };
 
     Shader(const std::string &file, Shader::Type type);
+    ~Shader();
 
     GLuint getShaderID() const;
-
 
 private:
     bool compile(const std::string &source);

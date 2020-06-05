@@ -11,11 +11,14 @@
 class Program {
 public:
     Program();
+    ~Program();
 
     bool addShader(const Shader &shader);
     bool link();
 
     GLuint getProgramID() const;
+
+    GLuint uniform(const std::string &name) const;
 
 private:
     GLuint _programID;
